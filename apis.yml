@@ -1,8 +1,22 @@
 aid: quantilia
 name: Quantilia
-description: 'Quantilia is a company surfaced as a portfolio company of serena and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai-data. This profile is a lead awaiting the enrichment pipeline.'
+description: 'Quantilia is a Nice, France based financial data and portfolio reporting
+  platform for institutional investors, family offices, asset managers, private banks,
+  insurance companies and corporates and endowments. It aggregates fragmented investment
+  data from custodian banks, fund administrators, fund managers, private equity and
+  real estate GPs, ESG score providers and benchmark vendors such as MSCI and Bloomberg,
+  then extracts, tests, categorizes, standardizes, labels, enriches and controls it
+  into a single auditable reporting layer with full financial data lineage. Products
+  cover tailored portfolio monitoring, multi-source data aggregation, security-level
+  and private equity lookthrough, structured products monitoring, ESG and risk reports,
+  quantitative analysis, document generation and AI services, with regulatory output
+  for Solvency II, QRT, COREP, CRR3, SFDR, PAI and LEC29. Delivery is via dashboards,
+  report packs, Excel, PDF and API feeds. The company states ISO-27001 certification,
+  GDPR and DORA compliance, and EU/Swiss based hosting. No public developer portal,
+  API reference or machine-readable specification is published; the API surface is
+  delivered to contracted clients.'
 url: https://raw.githubusercontent.com/api-evangelist/quantilia/refs/heads/main/apis.yml
+image: https://www.quantilia.com/wp-content/uploads/2026/05/og_quantilia_en.png
 x-type: company
 x-source: serena-portfolio
 x-tier: stub
@@ -13,6 +27,16 @@ modified: '2026-08-17'
 tags:
 - Company
 - Ai Data
+- Financial Data
+- Portfolio Reporting
+- Investment Management
+- Asset Management
+- Risk Analytics
+- ESG
+- Private Markets
+- Regulatory Reporting
+- Data Aggregation
+- France
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,5 +44,64 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/quantilia-domain-security.yml
 - type: Website
   url: https://www.quantilia.com/
+- type: Blog
+  url: https://www.quantilia.com/blog/
+- type: BlogRSS
+  url: https://www.quantilia.com/feed/
+- type: Support
+  url: https://www.quantilia.com/contact-us/
+- type: SignUp
+  url: https://www.quantilia.com/book-a-demo/
+- type: Login
+  url: https://app.quantilia.com/
+- type: TermsOfService
+  url: https://www.quantilia.com/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://www.quantilia.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/quantilia/
+- type: StatusPage
+  url: https://status.quantilia.com/
+- type: Lifecycle
+  url: lifecycle/quantilia-lifecycle.yml
+- type: Conformance
+  url: conformance/quantilia-conformance.yml
+- type: Compliance
+  url: conformance/quantilia-conformance.yml
+- type: Plans
+  url: plans/quantilia-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/quantilia-rate-limits.yml
+- type: Packages
+  url: packages/quantilia-packages.yml
+- type: LLMsTxt
+  url: llms/quantilia-llms.txt
+x-enrichment:
+  date: '2026-08-17'
+  status: minimal
+  artifacts_added: 8
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Quantilia markets API delivery ("Output as files, dashboards, or API feeds for
+    downstream systems") and runs a live API host at api.quantilia.com, but that host
+    answers HTTP 403 Forbidden from nginx to every unauthenticated request including
+    "/", and the 48-page public sitemap contains no developer portal, API reference or
+    specification of any kind — the contract is only reachable with a signed client
+    agreement.
+  evidence:
+  - url: https://api.quantilia.com/
+    status: 403
+  - url: https://www.quantilia.com/openapi.json
+    status: 404
+  - url: https://www.quantilia.com/.well-known/security.txt
+    status: 403
+  - url: https://www.quantilia.com/sitemap_index.xml
+    status: 200
+  checked: '2026-08-17'

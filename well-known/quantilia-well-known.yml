@@ -1,0 +1,138 @@
+generated: '2026-08-17'
+method: probed
+source: live HTTP probes of every Quantilia host on 2026-08-17
+note: >-
+  Nothing was found. No /.well-known/ path on any Quantilia host returned a real
+  document, so NO WellKnown or SecurityTxt pointer is wired into apis.yml — this
+  file records a verified absence, not a presence. The marketing site
+  (www.quantilia.com, WordPress behind CloudFront) answers 403 from nginx for
+  every /.well-known/* path. The customer application host (app.quantilia.com, an
+  S3/CloudFront single-page app) answers 200 for EVERY path with the same 251-byte
+  text/html meta-refresh shell redirecting to the app root — a soft-200 catch-all,
+  explicitly rejected here rather than recorded as five hits. The API host
+  (api.quantilia.com) is live nginx but answers 403 Forbidden for every path
+  including "/", consistent with an IP-allowlisted or tenant-scoped API.
+hosts:
+- host: www.quantilia.com
+  kind: marketing-site
+  result: no-documents
+- host: app.quantilia.com
+  kind: customer-application-spa
+  result: soft-200-catch-all
+- host: api.quantilia.com
+  kind: api-host
+  result: forbidden
+probes:
+- host: www.quantilia.com
+  path: /.well-known/security.txt
+  url: https://www.quantilia.com/.well-known/security.txt
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: www.quantilia.com
+  path: /.well-known/openid-configuration
+  url: https://www.quantilia.com/.well-known/openid-configuration
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: www.quantilia.com
+  path: /.well-known/oauth-authorization-server
+  url: https://www.quantilia.com/.well-known/oauth-authorization-server
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: www.quantilia.com
+  path: /.well-known/api-catalog
+  url: https://www.quantilia.com/.well-known/api-catalog
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: www.quantilia.com
+  path: /.well-known/ai-plugin.json
+  url: https://www.quantilia.com/.well-known/ai-plugin.json
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: app.quantilia.com
+  path: /.well-known/security.txt
+  url: https://app.quantilia.com/.well-known/security.txt
+  status: 200
+  content_type: text/html
+  document: false
+  file: null
+  note: 251-byte meta-refresh HTML shell, identical on every path — SPA catch-all,
+    not a document.
+- host: app.quantilia.com
+  path: /.well-known/openid-configuration
+  url: https://app.quantilia.com/.well-known/openid-configuration
+  status: 200
+  content_type: text/html
+  document: false
+  file: null
+  note: Same SPA catch-all shell.
+- host: app.quantilia.com
+  path: /.well-known/oauth-authorization-server
+  url: https://app.quantilia.com/.well-known/oauth-authorization-server
+  status: 200
+  content_type: text/html
+  document: false
+  file: null
+  note: Same SPA catch-all shell.
+- host: app.quantilia.com
+  path: /.well-known/api-catalog
+  url: https://app.quantilia.com/.well-known/api-catalog
+  status: 200
+  content_type: text/html
+  document: false
+  file: null
+  note: Same SPA catch-all shell.
+- host: app.quantilia.com
+  path: /.well-known/ai-plugin.json
+  url: https://app.quantilia.com/.well-known/ai-plugin.json
+  status: 200
+  content_type: text/html
+  document: false
+  file: null
+  note: Same SPA catch-all shell.
+- host: api.quantilia.com
+  path: /.well-known/security.txt
+  url: https://api.quantilia.com/.well-known/security.txt
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: api.quantilia.com
+  path: /.well-known/openid-configuration
+  url: https://api.quantilia.com/.well-known/openid-configuration
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: api.quantilia.com
+  path: /.well-known/oauth-authorization-server
+  url: https://api.quantilia.com/.well-known/oauth-authorization-server
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: api.quantilia.com
+  path: /.well-known/api-catalog
+  url: https://api.quantilia.com/.well-known/api-catalog
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+- host: api.quantilia.com
+  path: /.well-known/ai-plugin.json
+  url: https://api.quantilia.com/.well-known/ai-plugin.json
+  status: 403
+  content_type: text/html
+  document: false
+  file: null
+hits: 0
+files: []

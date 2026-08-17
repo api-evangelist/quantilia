@@ -1,0 +1,35 @@
+generated: '2026-08-17'
+method: searched
+source: registry searches on npm, PyPI and GitHub, 2026-08-17
+note: >-
+  No first-party Quantilia client library exists in any public package registry.
+  Searched registry.npmjs.org (text=quantilia — zero results), pypi.org/pypi/quantilia/json
+  (HTTP 404), and the GitHub API. A GitHub organization named "Quantilia" does exist
+  (https://github.com/quantilia, id 114914699, created 2022-10-03) but it publishes
+  ZERO public repositories and its profile location reads "India" against a company
+  headquartered in Nice, France — ownership is unproven, so it is recorded here as an
+  observation and NOT wired as a GitHubOrganization pointer in apis.yml. A GitHub
+  repository search for "quantilia" returns exactly one result: this API Evangelist
+  profile repo. No SDK, CLI or CDN-distributed component is referenced anywhere on
+  the public site. Consequently NO SDKs pointer is wired — this file records a
+  verified absence.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  endpoint: https://registry.npmjs.org/-/v1/search?text=quantilia
+  status: 200
+  result: 0 packages
+- registry: pypi
+  endpoint: https://pypi.org/pypi/quantilia/json
+  status: 404
+  result: package does not exist
+- registry: github
+  endpoint: https://api.github.com/search/repositories?q=quantilia
+  status: 200
+  result: 1 result, and it is api-evangelist/quantilia (this profile)
+- registry: github-org
+  endpoint: https://api.github.com/orgs/quantilia
+  status: 200
+  result: org exists, public_repos = 0, ownership unverified

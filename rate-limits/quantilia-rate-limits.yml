@@ -1,0 +1,28 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.quantilia.com/sitemap_index.xml
+note: >-
+  No rate limits are published. Quantilia has no public developer portal, API
+  reference or machine-readable specification, so there is no document in which a
+  quota, window, burst allowance or 429 response could be stated. Nor could any
+  runtime signal be observed: the API host https://api.quantilia.com/ answers HTTP
+  403 (nginx Forbidden) to every unauthenticated request including "/", so no
+  X-RateLimit-* / RateLimit-* / Retry-After header is visible without credentials.
+  limit_count is 0 as a measured absence.
+limit_count: 0
+limits: []
+headers:
+  observed: false
+  standard: null
+  note: >-
+    No rate-limit response headers could be observed. Probing
+    https://api.quantilia.com/ returned 403 with only Date, Content-Type,
+    Content-Length, Connection and Vary — no RateLimit-*, X-RateLimit-* or
+    Retry-After.
+exhaustion_status: unknown
+retry_guidance: null
+evidence:
+- url: https://api.quantilia.com/
+  status: 403
+- url: https://www.quantilia.com/sitemap_index.xml
+  status: 200

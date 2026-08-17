@@ -1,0 +1,117 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.quantilia.com/
+docs: https://www.quantilia.com/
+note: >-
+  Quantilia publishes no machine-readable API contract, so no API-technical
+  conformance (OpenAPI, OAuth 2.0, OIDC, RFC 9457, pagination, idempotency) can be
+  asserted or refuted from a spec. What it does publish, on its own homepage, is a
+  security and regulatory posture — an ISO-27001 certification claim, GDPR and DORA
+  compliance, and EU/Swiss data residency — plus the regulatory report formats its
+  platform produces for clients. Those are recorded below with the page they were
+  read from. Certification claims are the provider's own statements; API Evangelist
+  has not seen a certificate, an auditor's report, or a trust center (probed for and
+  not found — see security/quantilia-trust-center.yml absence).
+conformance:
+- id: iso-27001
+  name: ISO/IEC 27001
+  category: security-management
+  conforms: true
+  evidence: >-
+    "ISO-27001 certified — Maximum data security" stated in the "Industry-leading
+    standards tailored to your needs" band on https://www.quantilia.com/ (fetched
+    2026-08-17, HTTP 200). Vendor self-statement; no certificate number, scope
+    statement, issuing body or expiry is published, and no trust center serves the
+    underlying report.
+  source: https://www.quantilia.com/
+- id: gdpr
+  name: General Data Protection Regulation (EU 2016/679)
+  category: privacy
+  conforms: true
+  evidence: >-
+    "GDPR — Full privacy compliance" stated on https://www.quantilia.com/, supported
+    by a published privacy policy at
+    https://www.quantilia.com/privacy-policy/ (HTTP 200).
+  source: https://www.quantilia.com/privacy-policy/
+- id: dora
+  name: Digital Operational Resilience Act (EU 2022/2554)
+  category: financial-regulation
+  conforms: true
+  evidence: >-
+    "DORA Compliant" stated on https://www.quantilia.com/. Material as an ICT
+    third-party service provider to EU financial entities; no DORA register of
+    information, subcontracting map or resilience testing evidence is published.
+  source: https://www.quantilia.com/
+- id: eu-swiss-data-residency
+  name: EU / Swiss data residency
+  category: data-residency
+  conforms: true
+  evidence: >-
+    "EU and Swiss based hosting — Your data stays local" stated on
+    https://www.quantilia.com/. No region list, subprocessor list or DPA is
+    published publicly.
+  source: https://www.quantilia.com/
+- id: solvency-ii
+  name: Solvency II (incl. QRT)
+  category: regulatory-reporting-output
+  conforms: true
+  evidence: >-
+    Listed among the regulatory reports the platform produces — "Regulatory reports :
+    Solvency, QRT, COREP, CRR3, SFDR, PAI, LEC29" — on https://www.quantilia.com/.
+    This is a reporting OUTPUT the platform generates for clients, not a conformance
+    claim about an API contract.
+  source: https://www.quantilia.com/
+- id: sfdr
+  name: Sustainable Finance Disclosure Regulation (EU 2019/2088) incl. PAI
+  category: regulatory-reporting-output
+  conforms: true
+  evidence: >-
+    SFDR and PAI named in the regulatory report list on https://www.quantilia.com/
+    and on https://www.quantilia.com/multi-source-data-aggregation/.
+  source: https://www.quantilia.com/multi-source-data-aggregation/
+- id: corep-crr3
+  name: COREP / CRR3
+  category: regulatory-reporting-output
+  conforms: true
+  evidence: >-
+    COREP and CRR3 named in the regulatory report list on https://www.quantilia.com/.
+  source: https://www.quantilia.com/
+- id: openapi
+  name: OpenAPI Specification
+  category: api-contract
+  conforms: false
+  evidence: >-
+    No OpenAPI/Swagger document found. Probed /openapi.json, /openapi.yaml,
+    /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc on www.quantilia.com
+    (404 on all), api.quantilia.com (403 on all, including "/") and app.quantilia.com
+    (200 on all, but every response is the same 251-byte SPA meta-refresh HTML shell,
+    not a spec). No developer portal or API reference exists in the site sitemap.
+  source: probe
+- id: graphql
+  name: GraphQL
+  category: api-contract
+  conforms: false
+  evidence: >-
+    POST introspection to https://api.quantilia.com/graphql returned HTTP 403 (nginx
+    Forbidden); https://www.quantilia.com/graphql returned 404. No GraphQL surface is
+    advertised.
+  source: probe
+- id: asyncapi
+  name: AsyncAPI
+  category: event-contract
+  conforms: false
+  evidence: >-
+    No event, streaming or webhook surface is documented anywhere on the public site;
+    delivery is described as dashboards, report packs, Excel, PDF and API feeds.
+  source: probe
+- id: oauth2
+  name: OAuth 2.0
+  category: authorization
+  conforms: unknown
+  evidence: >-
+    /.well-known/oauth-authorization-server and /.well-known/openid-configuration
+    return 403 on www.quantilia.com and api.quantilia.com, and the SPA catch-all
+    shell on app.quantilia.com. No authentication model is published, so the
+    authorization scheme behind the client API feeds cannot be determined without
+    credentials.
+  source: probe

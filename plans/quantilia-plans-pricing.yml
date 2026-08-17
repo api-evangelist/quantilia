@@ -1,0 +1,31 @@
+generated: '2026-08-17'
+method: searched
+source: https://www.quantilia.com/sitemap_index.xml
+note: >-
+  Quantilia publishes no pricing. There is no /pricing, /plans or /packages page in
+  the site sitemap (48 public pages across EN and FR, checked 2026-08-17), no price
+  is quoted on any product or segment page, and every commercial call to action
+  routes to https://www.quantilia.com/book-a-demo/ or
+  https://www.quantilia.com/contact-us/ (sales@quantilia.com, +33 4 93 53 57 51).
+  This is an enterprise "book a demo" motion aimed at pension funds, insurers,
+  sovereign wealth funds, family offices and asset managers; commercial terms are
+  negotiated per client and are not public. plan_count is 0 as a measured fact, not
+  as a gap in this pass.
+plan_count: 0
+pricing_model: contact-sales
+currency: null
+free_tier: false
+trial: false
+self_serve_signup: false
+plans: []
+sales_contact:
+  url: https://www.quantilia.com/book-a-demo/
+  email: sales@quantilia.com
+  phone: '+33 4 93 53 57 51'
+evidence:
+- url: https://www.quantilia.com/sitemap_index.xml
+  status: 200
+- url: https://www.quantilia.com/book-a-demo/
+  status: 200
+- url: https://www.quantilia.com/contact-us/
+  status: 200

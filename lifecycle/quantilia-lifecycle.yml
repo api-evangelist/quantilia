@@ -1,0 +1,50 @@
+generated: '2026-08-17'
+method: searched
+source: https://status.quantilia.com/
+note: >-
+  Quantilia publishes a first-party status page at https://status.quantilia.com/
+  (HTTP 200, titled "Quantilia Status", served from S3/CloudFront). It is a
+  client-rendered React single-page app — the served HTML is a 461-byte shell with an
+  empty #root div, so the component/incident detail is not machine-readable without
+  script execution. No versioning policy, deprecation policy, Sunset/Deprecation
+  header commitment (RFC 8594), SLA, or end-of-life schedule is published anywhere on
+  the public site, and there is no changelog or release-notes page in the sitemap.
+status_page:
+  url: https://status.quantilia.com/
+  first_party: true
+  status: 200
+  machine_readable: false
+  format: client-rendered SPA (no static incident feed, RSS, Atom or JSON API found)
+  provider: self-hosted (AWS S3 + CloudFront), not Statuspage.io / Instatus / BetterStack
+  checked: '2026-08-17'
+versioning:
+  policy_published: false
+  scheme: null
+  note: >-
+    No public API reference exists, so no version scheme (URI path, header, date
+    version) can be observed.
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  notice_period: null
+  note: >-
+    No deprecation or sunset policy is published. Because no OpenAPI exists, no
+    deprecated operations can be derived either.
+sla:
+  published: false
+  note: >-
+    No uptime SLA or support-response commitment is published publicly. The terms and
+    conditions at https://www.quantilia.com/terms-and-conditions/ govern site use;
+    service levels appear to be contractual and client-specific.
+changelog:
+  published: false
+  note: No dated product changelog or release-notes page appears in the site sitemap.
+deprecated_operations: []
+evidence:
+- url: https://status.quantilia.com/
+  status: 200
+- url: https://www.quantilia.com/terms-and-conditions/
+  status: 200
+- url: https://www.quantilia.com/sitemap_index.xml
+  status: 200

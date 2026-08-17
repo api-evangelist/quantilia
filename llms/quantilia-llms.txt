@@ -1,0 +1,86 @@
+# Quantilia
+
+> Quantilia is a Nice, France based financial data and portfolio reporting platform for
+> institutional investors, family offices, asset managers, private banks, insurance
+> companies, and corporates and endowments. It aggregates fragmented investment data
+> from custodian banks, fund administrators, fund managers, private equity and real
+> estate GPs, ESG score providers and benchmark vendors such as MSCI and Bloomberg,
+> then extracts, tests, categorizes, standardizes, labels, enriches and controls it
+> into a single auditable reporting layer with full financial data lineage.
+
+generated: 2026-08-17
+method: generated
+source: apis.yml + repo artifacts (Quantilia serves no /llms.txt — https://www.quantilia.com/llms.txt returned HTTP 404 on 2026-08-17)
+
+## Agent notice — there is no public API
+
+Quantilia markets API delivery ("Output as files, dashboards, or API feeds for
+downstream systems") but publishes NO public developer portal, NO API reference,
+and NO machine-readable specification. There is nothing an agent can call.
+
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Postman collection or JSON Schema is
+  published at any Quantilia host.
+- The API host https://api.quantilia.com/ resolves and runs nginx, but returns
+  HTTP 403 Forbidden to every unauthenticated request, including the root path.
+  This is consistent with an IP-allowlisted or tenant-scoped client API.
+- The customer application at https://app.quantilia.com/ is a login-gated
+  single-page app. It answers HTTP 200 with the same 251-byte meta-refresh HTML
+  shell for every path, so any "200" you get from it is a catch-all, not a document.
+- No /.well-known/ document is served on any host.
+- No MCP server, no A2A agent card, no webhooks, no event stream.
+
+Access to the API surface requires a commercial agreement. Start at
+https://www.quantilia.com/book-a-demo/ or email sales@quantilia.com.
+
+## What the platform does
+
+- Tailored portfolio monitoring: https://www.quantilia.com/tailored-portfolio-monitoring/
+- Multi-source data aggregation: https://www.quantilia.com/multi-source-data-aggregation/
+- Security-level lookthrough: https://www.quantilia.com/security-level-lookthrough/
+- Private equity lookthrough to portfolio companies: https://www.quantilia.com/private-equity-lookthrough/
+- Private markets reports: https://www.quantilia.com/private-markets-reports/
+- Structured products monitoring: https://www.quantilia.com/structured-products-monitoring/
+- ESG and risk reports: https://www.quantilia.com/esg-and-risk-reports/
+- Quantitative analysis: https://www.quantilia.com/quantitative-analysis/
+- Document generation: https://www.quantilia.com/document-generation/
+- AI services: https://www.quantilia.com/ai-services/
+
+## Who it serves
+
+- Institutional investors: https://www.quantilia.com/institutional-investor/
+- Family offices: https://www.quantilia.com/family-office/
+- Asset managers: https://www.quantilia.com/asset-manager/
+- Private banks: https://www.quantilia.com/private-bank/
+- Insurance companies: https://www.quantilia.com/insurance-company/
+- Corporate and endowment: https://www.quantilia.com/corporate-and-endowment/
+
+## Regulatory output
+
+Reports the platform produces for clients: Solvency II and QRT, COREP, CRR3, SFDR
+and PAI, LEC29, plus ESG and carbon exposure tracking, forecasts and stress tests.
+
+## Compliance posture (provider self-stated)
+
+ISO-27001 certified, GDPR compliant, DORA compliant, EU and Swiss based hosting.
+No certificate, auditor report or trust center is published — https://trust.quantilia.com/
+does not resolve, and /.well-known/security.txt returns 403.
+
+## Company
+
+- Home: https://www.quantilia.com/
+- About: https://www.quantilia.com/about-us/
+- Our story: https://www.quantilia.com/our-story/
+- Blog: https://www.quantilia.com/blog/ (RSS: https://www.quantilia.com/feed/)
+- Contact: https://www.quantilia.com/contact-us/ — sales@quantilia.com, +33 4 93 53 57 51
+- Book a demo: https://www.quantilia.com/book-a-demo/
+- Client application (login): https://app.quantilia.com/
+- Status: https://status.quantilia.com/
+- Terms and conditions: https://www.quantilia.com/terms-and-conditions/
+- Privacy policy: https://www.quantilia.com/privacy-policy/
+- LinkedIn: https://www.linkedin.com/company/quantilia/
+- French site: https://www.quantilia.com/fr/
+
+## Optional
+
+- API Evangelist profile: https://apis.io/provider/quantilia/
+- This profile's source: https://github.com/api-evangelist/quantilia
