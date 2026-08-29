@@ -16,6 +16,17 @@ description: 'Quantilia is a Nice, France based financial data and portfolio rep
   API reference or machine-readable specification is published; the API surface is
   delivered to contracted clients.'
 url: https://raw.githubusercontent.com/api-evangelist/quantilia/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.quantilia.com/wp-content/uploads/2026/05/og_quantilia_en.png
 x-type: company
 x-source: serena-portfolio
